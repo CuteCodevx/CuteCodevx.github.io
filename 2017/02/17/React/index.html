@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>React | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="立项1.github上建立仓库clone到本地
+2.确保node环境并安装了yeoman和generator react-webpack
+3.进入项目目录，运行yo react-webpack gallery-by-react ；gallery-by-react是文件夹名称
+    是否包括路由
+    是否需要什么框架（主要处理数据流 数据共享更新等）
+    是否使用相关与处理语言
+    使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React">
+<meta property="og:url" content="http://yoursite.com/2017/02/17/React/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="立项1.github上建立仓库clone到本地
+2.确保node环境并安装了yeoman和generator react-webpack
+3.进入项目目录，运行yo react-webpack gallery-by-react ；gallery-by-react是文件夹名称
+    是否包括路由
+    是否需要什么框架（主要处理数据流 数据共享更新等）
+    是否使用相关与处理语言
+    使">
+<meta property="og:updated_time" content="2017-03-06T14:23:32.531Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React">
+<meta name="twitter:description" content="立项1.github上建立仓库clone到本地
+2.确保node环境并安装了yeoman和generator react-webpack
+3.进入项目目录，运行yo react-webpack gallery-by-react ；gallery-by-react是文件夹名称
+    是否包括路由
+    是否需要什么框架（主要处理数据流 数据共享更新等）
+    是否使用相关与处理语言
+    使">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-React" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/17/React/" class="article-date">
+  <time datetime="2017-02-17T15:09:25.000Z" itemprop="datePublished">2017-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="立项"><a href="#立项" class="headerlink" title="立项"></a>立项</h2><pre><code>1.github上建立仓库clone到本地
+2.确保node环境并安装了yeoman和generator react-webpack
+3.进入项目目录，运行yo react-webpack gallery-by-react ；gallery-by-react是文件夹名称
+    是否包括路由
+    是否需要什么框架（主要处理数据流 数据共享更新等）
+    是否使用相关与处理语言
+    使用什么后缀
+4.生成的目录
+    node_modules
+    src 源代码
+    test 测试代码
+    .editorconfig 统一不同的编辑器 配置文件
+    .eslintsrc  .jshintrc 代码风格校验
+    .yo-rc-json yeoman配置文件
+    .Gruntfile  
+favicon.ico是浏览器名字旁的小图标，刚在根目录里，也可以在HTML里通过link icon的方式显式调用；
+npm install autoprefixer-loader --save-dev 在devDependencies里添加autoprefixer-loader包，让别人拿到我们的github代码时没有这些装好了的包，他们只要npm install就可以安装相应的包
+
+问题：ReactDOM is undefined ，没有在Main.js中import RectDOM from &quot;react-dom&quot;
+
+代码写到src的components的Main.js中
+    定位
+    旋转
+</code></pre><h2 id="将React项目push到git中总结"><a href="#将React项目push到git中总结" class="headerlink" title="将React项目push到git中总结"></a>将React项目push到git中总结</h2><pre><code>npm run dist编译生成代码到dist目录
+git add dist/git commit -m &quot;add dist&quot;
+git subtree push --prefix=dist origin gh-pages
+prefix用来推送本地的dist目录，推送成功就可以通过github提供的web服务来访问站点：https://CuteCodevx.github.io/gallery-by-react
+部署后问题：找不到app.js文件，在index.html中script标签的引入有问题，改了src地址,去掉‘\’,变成相对路径，在default.js中publicPath也需去掉‘\’    
+</code></pre><p><strong>遇到的问题：使用yeoman无法生成gruntfile.js文件：这是因为generator-react-webpackV2.0移除了Grunt，可以执行npm start或者npm run serve启动服务,grunt:serve:dist/grunt build可用npm run dist来代替编译生成代码到dist目录,可看package.json文件</strong></p>
+<h3 id="react特点"><a href="#react特点" class="headerlink" title="react特点"></a>react特点</h3><pre><code>1.JSX语法
+    html结构与js可以混在一起写，更加清晰
+2.虚拟DOM
+    通过DOM diff算法，只会更新有差异化的部分，不用渲染整个页面，从而提高效率
+3.组件化
+    把页面上的功能都写个组件，然后可以结合起来，可以做到重用
+在页面中需要引入：react.js              核心代码
+                react-dom.js            渲染DOM
+                browser.min.js        解析JSX语法
+</code></pre><h3 id="ReactDOM-render"><a href="#ReactDOM-render" class="headerlink" title="ReactDOM.render()"></a>ReactDOM.render()</h3><pre><code>React的最基本方法，将React的模板语法转为真正的HTML，并插入到指定的DOM节点里，再渲染它
+    参数1：创建的元素
+    参数2：要添加给谁（DOM元素）
+    参数3：渲染成功后的回调函数
+</code></pre><h3 id="JSX语法"><a href="#JSX语法" class="headerlink" title="JSX语法"></a>JSX语法</h3><pre><code>遇到尖括号开头的解析成html。遇到大括号开头的解析成JavaScript
+可以在模板里插入变量，如果这个变量是个数组，则会自己把数组里所有数据全部显示
+react里循环用map()
+</code></pre><h3 id="创建组件React-createClass"><a href="#创建组件React-createClass" class="headerlink" title="创建组件React.createClass()"></a>创建组件React.createClass()</h3><pre><code>注意：1、存组件的变量名首字母要大写
+     2、render的return里只能出现一个顶层标签
+</code></pre><h3 id="es6类继承创建组件"><a href="#es6类继承创建组件" class="headerlink" title="es6类继承创建组件"></a>es6类继承创建组件</h3><pre><code>class Components extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+
+        }
+    }  //这个是代替getInitialState方法
+    fn(){
+
+    }
+    render(){
+        return (
+
+        );
+    }
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/17/React/" data-id="cjf820k8v000650usvgzkwmur" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/19/Angular-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          Angular 2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/19/my-first-article/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">my first article</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/26/I-m-back/">I&#39;m back</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/06/rem/">rem</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/compare-Array/">compare Array</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/26/bootstrap/">bootstrap</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/25/git-github/">git github</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Cute WQ<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

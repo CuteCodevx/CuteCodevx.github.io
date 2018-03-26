@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript操作DOM常用API总结创建型APIcreateElement,createTextNode,cloneNode,createDocumentFragment
+注意：1.他们创建的节点都是孤立的节点，需要appendChild添加到文档中
+     2.cloneNode要注意如果被复制的节点是否包含字节点及事件绑定等问题
+        复制节点必须要修改id；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript">
+<meta property="og:url" content="http://yoursite.com/2017/02/21/JavaScript/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JavaScript操作DOM常用API总结创建型APIcreateElement,createTextNode,cloneNode,createDocumentFragment
+注意：1.他们创建的节点都是孤立的节点，需要appendChild添加到文档中
+     2.cloneNode要注意如果被复制的节点是否包含字节点及事件绑定等问题
+        复制节点必须要修改id；">
+<meta property="og:updated_time" content="2017-02-25T11:34:33.589Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript">
+<meta name="twitter:description" content="JavaScript操作DOM常用API总结创建型APIcreateElement,createTextNode,cloneNode,createDocumentFragment
+注意：1.他们创建的节点都是孤立的节点，需要appendChild添加到文档中
+     2.cloneNode要注意如果被复制的节点是否包含字节点及事件绑定等问题
+        复制节点必须要修改id；">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/21/JavaScript/" class="article-date">
+  <time datetime="2017-02-21T07:25:31.000Z" itemprop="datePublished">2017-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JavaScript操作DOM常用API总结"><a href="#JavaScript操作DOM常用API总结" class="headerlink" title="JavaScript操作DOM常用API总结"></a>JavaScript操作DOM常用API总结</h1><h4 id="创建型API"><a href="#创建型API" class="headerlink" title="创建型API"></a>创建型API</h4><pre><code>createElement,createTextNode,cloneNode,createDocumentFragment
+注意：1.他们创建的节点都是孤立的节点，需要appendChild添加到文档中
+     2.cloneNode要注意如果被复制的节点是否包含字节点及事件绑定等问题
+        复制节点必须要修改id；
+        如果是通过addEventListener或onclick进行绑定事件，则副本节点不会绑定，如果使用内联方式绑定，则副本节点同样会触发该事件
+     3.使用createDocumentFragment来解决添加大量节点时的性能问题
+        创建了一个fragment，每次生成的li节点先添加到fragment，最后一次性添加到list。
+</code></pre><h4 id="页面修改型API"><a href="#页面修改型API" class="headerlink" title="页面修改型API"></a>页面修改型API</h4><pre><code>appendChild,insertBefore,removeChild,replaceChild
+注意：removeChild-&gt;删除指定的节点并返回；
+</code></pre><h4 id="节点查询型API"><a href="#节点查询型API" class="headerlink" title="节点查询型API"></a>节点查询型API</h4><pre><code>document.getElementById,document.getElementsByTagName,document.getElementsByName,
+document.getElementsByClassName,document.querySelector,document.querySelectorAll
+</code></pre><h4 id="节点关系型API"><a href="#节点关系型API" class="headerlink" title="节点关系型API"></a>节点关系型API</h4><pre><code>parentNode/parentElement
+previousSibling/previousElementSibling/nextSibling/nextElementSibling
+childNodes/children/firstNode/lastNode/hasChildNodes
+</code></pre><h4 id="元素属性型API"><a href="#元素属性型API" class="headerlink" title="元素属性型API"></a>元素属性型API</h4><pre><code>setAttribute
+getAttribute
+</code></pre><h4 id="元素样式型API"><a href="#元素样式型API" class="headerlink" title="元素样式型API"></a>元素样式型API</h4><pre><code>window.getComputedStyle
+getBoundingClientRect
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/21/JavaScript/" data-id="cjf820k8y000750uszxm0hjbk" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/21/CSS3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          CSS3
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/20/ES6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">ES6</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/26/I-m-back/">I&#39;m back</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/06/rem/">rem</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/compare-Array/">compare Array</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/26/bootstrap/">bootstrap</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/25/git-github/">git github</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Cute WQ<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

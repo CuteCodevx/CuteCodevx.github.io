@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angular 2 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Angular 2 组成-模块：Modules，
+    ES6中，提供import来导入在其他文件中定义的模块，用export导出如Jquery这样的依赖到业务代码模块中
+-指令：Directives，
+    指令可以为指定DOM元素添加新的行为特征，扩展元素功能。有可自定义特性。
+-组件：Components，
+    处理界面和交互相关的。
+    复用。组件树。变化检测是Angular在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular 2">
+<meta property="og:url" content="http://yoursite.com/2017/02/19/Angular-2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Angular 2 组成-模块：Modules，
+    ES6中，提供import来导入在其他文件中定义的模块，用export导出如Jquery这样的依赖到业务代码模块中
+-指令：Directives，
+    指令可以为指定DOM元素添加新的行为特征，扩展元素功能。有可自定义特性。
+-组件：Components，
+    处理界面和交互相关的。
+    复用。组件树。变化检测是Angular在">
+<meta property="og:updated_time" content="2017-03-30T12:59:18.047Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular 2">
+<meta name="twitter:description" content="Angular 2 组成-模块：Modules，
+    ES6中，提供import来导入在其他文件中定义的模块，用export导出如Jquery这样的依赖到业务代码模块中
+-指令：Directives，
+    指令可以为指定DOM元素添加新的行为特征，扩展元素功能。有可自定义特性。
+-组件：Components，
+    处理界面和交互相关的。
+    复用。组件树。变化检测是Angular在">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Angular-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/19/Angular-2/" class="article-date">
+  <time datetime="2017-02-19T05:09:58.000Z" itemprop="datePublished">2017-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Angular 2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Angular-2-组成"><a href="#Angular-2-组成" class="headerlink" title="Angular 2 组成"></a>Angular 2 组成</h2><pre><code>-模块：Modules，
+    ES6中，提供import来导入在其他文件中定义的模块，用export导出如Jquery这样的依赖到业务代码模块中
+-指令：Directives，
+    指令可以为指定DOM元素添加新的行为特征，扩展元素功能。有可自定义特性。
+-组件：Components，
+    处理界面和交互相关的。
+    复用。组件树。变化检测是Angular在应用的数据变化后，用于决定哪个组件需要随之刷新的机制
+-模板：Templates，
+    当使用组件标签时，通过template或temolateUrl属性引入HTML来描述渲染的界面内容。
+-数据绑定：Data Binding，
+    把数据映射到模板上，或从模板中取回数据 
+-服务：Services
+    书写和放置可重用的公共功能和复杂业务逻辑。
+    一个服务就是一个简单的类，通常在组件中引用服务来处理数据和实现逻辑。    
+-依赖注入：Dependency Injection
+    通过对实现服务的类加上@Injectable装饰器，同时把他注册到Provider，从而将服务提供给调用者使用
+</code></pre><h2 id="开发语言-TypeScript"><a href="#开发语言-TypeScript" class="headerlink" title="开发语言 TypeScript"></a>开发语言 TypeScript</h2><h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><p>boolean，number，string，array，null和undefined，</p>
+<h6 id="元组类型-tuple，"><a href="#元组类型-tuple，" class="headerlink" title="元组类型 tuple，"></a>元组类型 tuple，</h6><p><strong>用来表示已知元素数量和类型的数组</strong><br><code>let x:[string,number];
+x=[&#39;Angular&#39;,25];
+x=[25,&#39;Angular&#39;] //报错 
+console.log(x[0]) //Angular</code></p>
+<h6 id="枚举类型-enum，"><a href="#枚举类型-enum，" class="headerlink" title="枚举类型 enum，"></a>枚举类型 enum，</h6><p><strong>可以手动修改默认下标值</strong><br><code>enum Color {Red,Green,Blue};
+let c:Color=Color.Blue;
+console.log(c) //2</code></p>
+<p><code>enum Color {Redreen=6};
+let c:Color=Color.Blue;
+console.log(c); //3</code></p>
+<h6 id="任意值类型-any"><a href="#任意值类型-any" class="headerlink" title="任意值类型 any,"></a>任意值类型 any,</h6><h6 id="void类型，"><a href="#void类型，" class="headerlink" title="void类型，"></a>void类型，</h6><p><strong>一个函数没有返回值时，意味着返回类型是void</strong></p>
+<h6 id="never类型"><a href="#never类型" class="headerlink" title="never类型"></a>never类型</h6><p><strong>声明为never类型的变量只能被never类型所赋值</strong></p>
+<hr>
+<p><strong>声明变量时需要加上类型声明</strong><br><code>let words:string=模板字符串反引号 你好，今年是${name}发布1周年 模板字符串反引号；</code><br><code>let flag:boolean=true;</code></p>
+<h2 id="生命周期支持"><a href="#生命周期支持" class="headerlink" title="生命周期支持"></a>生命周期支持</h2><p>一些例子：<br>constructor 构造器初始化<br>OnChanges 接收来自父组件传入的数据，为接下来组件初始化提供数据持<br>OnInit    组件初始化<br>OnChanges 稳定期，数据变化就会触发<br>OnDestroy 组件销毁前</p>
+<h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><pre><code>赋予一个类更丰富的信息（元数据）
+</code></pre><h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><pre><code>属性绑定 把组件类的数据传递到模板中 [value]
+事件绑定 把模板里产生的数据通过函数调用的方式传递到组件类
+双向绑定 [(ngModel)]
+</code></pre><p>@Input 子组件的输入接口，用来接收来自父组件的数据 属性绑定 自上而下<br>@Output 子组件往父组件传递数据 事件绑定 自下而上<br>    Output与EventEmitter配合使用 </p>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><pre><code>属性指令
+结构指令 改变模板的结构 ngIf用来插入或移除DOM节点
+指定需要导入ElementRef,Renderer来辅助元素的渲染，导入后还要在构造器函数里添加对应的参数constructor(el:ElementRef,render:Renderer)
+</code></pre><h2 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h2><pre><code>依赖注入配置：providers：[xxxxx] 关键步骤 依赖注入机制会根据providers提供的xxxxx类型预先实例化这个对象并缓存到注入器里，组件构造函数里有constructor(xx:xxxxx)指定xx为xxxxx类型
+分层注入：组件树里的不同层级，重新注入，不会影响其他
+</code></pre><h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><pre><code>使用ngModel要引入FormsModule模块
+routerLink --&gt;RouterModule模块
+</code></pre><h3 id="毕设的"><a href="#毕设的" class="headerlink" title="毕设的"></a>毕设的</h3><pre><code>让背景图自适应屏幕大小 background-size：100%
+自适应布局：col-lg-3 col-md-4 col-sm-6 尽量不要改动class的margin padding width height等
+在angular2中切换地址导航栏变色：a.router-link-actives属性
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/19/Angular-2/" data-id="cjf820k8d000050usex1s5hyx" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/20/ES6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          ES6
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/17/React/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">React</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/26/I-m-back/">I&#39;m back</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/06/rem/">rem</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/compare-Array/">compare Array</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/26/bootstrap/">bootstrap</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/25/git-github/">git github</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Cute WQ<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

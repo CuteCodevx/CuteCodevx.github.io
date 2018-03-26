@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Angular-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/19/Angular-2/" class="article-date">
+  <time datetime="2017-02-19T05:09:58.000Z" itemprop="datePublished">2017-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/19/Angular-2/">Angular 2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Angular-2-组成"><a href="#Angular-2-组成" class="headerlink" title="Angular 2 组成"></a>Angular 2 组成</h2><pre><code>-模块：Modules，
+    ES6中，提供import来导入在其他文件中定义的模块，用export导出如Jquery这样的依赖到业务代码模块中
+-指令：Directives，
+    指令可以为指定DOM元素添加新的行为特征，扩展元素功能。有可自定义特性。
+-组件：Components，
+    处理界面和交互相关的。
+    复用。组件树。变化检测是Angular在应用的数据变化后，用于决定哪个组件需要随之刷新的机制
+-模板：Templates，
+    当使用组件标签时，通过template或temolateUrl属性引入HTML来描述渲染的界面内容。
+-数据绑定：Data Binding，
+    把数据映射到模板上，或从模板中取回数据 
+-服务：Services
+    书写和放置可重用的公共功能和复杂业务逻辑。
+    一个服务就是一个简单的类，通常在组件中引用服务来处理数据和实现逻辑。    
+-依赖注入：Dependency Injection
+    通过对实现服务的类加上@Injectable装饰器，同时把他注册到Provider，从而将服务提供给调用者使用
+</code></pre><h2 id="开发语言-TypeScript"><a href="#开发语言-TypeScript" class="headerlink" title="开发语言 TypeScript"></a>开发语言 TypeScript</h2><h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><p>boolean，number，string，array，null和undefined，</p>
+<h6 id="元组类型-tuple，"><a href="#元组类型-tuple，" class="headerlink" title="元组类型 tuple，"></a>元组类型 tuple，</h6><p><strong>用来表示已知元素数量和类型的数组</strong><br><code>let x:[string,number];
+x=[&#39;Angular&#39;,25];
+x=[25,&#39;Angular&#39;] //报错 
+console.log(x[0]) //Angular</code></p>
+<h6 id="枚举类型-enum，"><a href="#枚举类型-enum，" class="headerlink" title="枚举类型 enum，"></a>枚举类型 enum，</h6><p><strong>可以手动修改默认下标值</strong><br><code>enum Color {Red,Green,Blue};
+let c:Color=Color.Blue;
+console.log(c) //2</code></p>
+<p><code>enum Color {Redreen=6};
+let c:Color=Color.Blue;
+console.log(c); //3</code></p>
+<h6 id="任意值类型-any"><a href="#任意值类型-any" class="headerlink" title="任意值类型 any,"></a>任意值类型 any,</h6><h6 id="void类型，"><a href="#void类型，" class="headerlink" title="void类型，"></a>void类型，</h6><p><strong>一个函数没有返回值时，意味着返回类型是void</strong></p>
+<h6 id="never类型"><a href="#never类型" class="headerlink" title="never类型"></a>never类型</h6><p><strong>声明为never类型的变量只能被never类型所赋值</strong></p>
+<hr>
+<p><strong>声明变量时需要加上类型声明</strong><br><code>let words:string=模板字符串反引号 你好，今年是${name}发布1周年 模板字符串反引号；</code><br><code>let flag:boolean=true;</code></p>
+<h2 id="生命周期支持"><a href="#生命周期支持" class="headerlink" title="生命周期支持"></a>生命周期支持</h2><p>一些例子：<br>constructor 构造器初始化<br>OnChanges 接收来自父组件传入的数据，为接下来组件初始化提供数据持<br>OnInit    组件初始化<br>OnChanges 稳定期，数据变化就会触发<br>OnDestroy 组件销毁前</p>
+<h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><pre><code>赋予一个类更丰富的信息（元数据）
+</code></pre><h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><pre><code>属性绑定 把组件类的数据传递到模板中 [value]
+事件绑定 把模板里产生的数据通过函数调用的方式传递到组件类
+双向绑定 [(ngModel)]
+</code></pre><p>@Input 子组件的输入接口，用来接收来自父组件的数据 属性绑定 自上而下<br>@Output 子组件往父组件传递数据 事件绑定 自下而上<br>    Output与EventEmitter配合使用 </p>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><pre><code>属性指令
+结构指令 改变模板的结构 ngIf用来插入或移除DOM节点
+指定需要导入ElementRef,Renderer来辅助元素的渲染，导入后还要在构造器函数里添加对应的参数constructor(el:ElementRef,render:Renderer)
+</code></pre><h2 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h2><pre><code>依赖注入配置：providers：[xxxxx] 关键步骤 依赖注入机制会根据providers提供的xxxxx类型预先实例化这个对象并缓存到注入器里，组件构造函数里有constructor(xx:xxxxx)指定xx为xxxxx类型
+分层注入：组件树里的不同层级，重新注入，不会影响其他
+</code></pre><h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><pre><code>使用ngModel要引入FormsModule模块
+routerLink --&gt;RouterModule模块
+</code></pre><h3 id="毕设的"><a href="#毕设的" class="headerlink" title="毕设的"></a>毕设的</h3><pre><code>让背景图自适应屏幕大小 background-size：100%
+自适应布局：col-lg-3 col-md-4 col-sm-6 尽量不要改动class的margin padding width height等
+在angular2中切换地址导航栏变色：a.router-link-actives属性
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/19/Angular-2/" data-id="cjf820k8d000050usex1s5hyx" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-React" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/17/React/" class="article-date">
+  <time datetime="2017-02-17T15:09:25.000Z" itemprop="datePublished">2017-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/17/React/">React</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="立项"><a href="#立项" class="headerlink" title="立项"></a>立项</h2><pre><code>1.github上建立仓库clone到本地
+2.确保node环境并安装了yeoman和generator react-webpack
+3.进入项目目录，运行yo react-webpack gallery-by-react ；gallery-by-react是文件夹名称
+    是否包括路由
+    是否需要什么框架（主要处理数据流 数据共享更新等）
+    是否使用相关与处理语言
+    使用什么后缀
+4.生成的目录
+    node_modules
+    src 源代码
+    test 测试代码
+    .editorconfig 统一不同的编辑器 配置文件
+    .eslintsrc  .jshintrc 代码风格校验
+    .yo-rc-json yeoman配置文件
+    .Gruntfile  
+favicon.ico是浏览器名字旁的小图标，刚在根目录里，也可以在HTML里通过link icon的方式显式调用；
+npm install autoprefixer-loader --save-dev 在devDependencies里添加autoprefixer-loader包，让别人拿到我们的github代码时没有这些装好了的包，他们只要npm install就可以安装相应的包
+
+问题：ReactDOM is undefined ，没有在Main.js中import RectDOM from &quot;react-dom&quot;
+
+代码写到src的components的Main.js中
+    定位
+    旋转
+</code></pre><h2 id="将React项目push到git中总结"><a href="#将React项目push到git中总结" class="headerlink" title="将React项目push到git中总结"></a>将React项目push到git中总结</h2><pre><code>npm run dist编译生成代码到dist目录
+git add dist/git commit -m &quot;add dist&quot;
+git subtree push --prefix=dist origin gh-pages
+prefix用来推送本地的dist目录，推送成功就可以通过github提供的web服务来访问站点：https://CuteCodevx.github.io/gallery-by-react
+部署后问题：找不到app.js文件，在index.html中script标签的引入有问题，改了src地址,去掉‘\’,变成相对路径，在default.js中publicPath也需去掉‘\’    
+</code></pre><p><strong>遇到的问题：使用yeoman无法生成gruntfile.js文件：这是因为generator-react-webpackV2.0移除了Grunt，可以执行npm start或者npm run serve启动服务,grunt:serve:dist/grunt build可用npm run dist来代替编译生成代码到dist目录,可看package.json文件</strong></p>
+<h3 id="react特点"><a href="#react特点" class="headerlink" title="react特点"></a>react特点</h3><pre><code>1.JSX语法
+    html结构与js可以混在一起写，更加清晰
+2.虚拟DOM
+    通过DOM diff算法，只会更新有差异化的部分，不用渲染整个页面，从而提高效率
+3.组件化
+    把页面上的功能都写个组件，然后可以结合起来，可以做到重用
+在页面中需要引入：react.js              核心代码
+                react-dom.js            渲染DOM
+                browser.min.js        解析JSX语法
+</code></pre><h3 id="ReactDOM-render"><a href="#ReactDOM-render" class="headerlink" title="ReactDOM.render()"></a>ReactDOM.render()</h3><pre><code>React的最基本方法，将React的模板语法转为真正的HTML，并插入到指定的DOM节点里，再渲染它
+    参数1：创建的元素
+    参数2：要添加给谁（DOM元素）
+    参数3：渲染成功后的回调函数
+</code></pre><h3 id="JSX语法"><a href="#JSX语法" class="headerlink" title="JSX语法"></a>JSX语法</h3><pre><code>遇到尖括号开头的解析成html。遇到大括号开头的解析成JavaScript
+可以在模板里插入变量，如果这个变量是个数组，则会自己把数组里所有数据全部显示
+react里循环用map()
+</code></pre><h3 id="创建组件React-createClass"><a href="#创建组件React-createClass" class="headerlink" title="创建组件React.createClass()"></a>创建组件React.createClass()</h3><pre><code>注意：1、存组件的变量名首字母要大写
+     2、render的return里只能出现一个顶层标签
+</code></pre><h3 id="es6类继承创建组件"><a href="#es6类继承创建组件" class="headerlink" title="es6类继承创建组件"></a>es6类继承创建组件</h3><pre><code>class Components extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+
+        }
+    }  //这个是代替getInitialState方法
+    fn(){
+
+    }
+    render(){
+        return (
+
+        );
+    }
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/17/React/" data-id="cjf820k8v000650usvgzkwmur" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-my-first-article" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/19/my-first-article/" class="article-date">
+  <time datetime="2016-12-19T13:32:41.000Z" itemprop="datePublished">2016-12-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/19/my-first-article/">my first article</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="node-js概念"><a href="#node-js概念" class="headerlink" title="node.js概念"></a>node.js概念</h1><h4 id="node里的全局对象"><a href="#node里的全局对象" class="headerlink" title="node里的全局对象"></a>node里的全局对象</h4><pre><code>global        顶层对象，类似window
+    在nodejs里定义的全局变量并不是global身上的属性，它是当前模块下的属性
+process        进程对象，对当前运行程序的进程进行访问和控制
+</code></pre><h4 id="node里的全局函数"><a href="#node里的全局函数" class="headerlink" title="node里的全局函数"></a>node里的全局函数</h4><pre><code>setTimeout()
+clearTimeout()
+setInterval()
+clearInterval()
+require()            加载模块
+Buffer()            操作二进制数据
+</code></pre><h4 id="node里的全局变量"><a href="#node里的全局变量" class="headerlink" title="node里的全局变量"></a>node里的全局变量</h4><pre><code>__filename            当前文件的路径 指向当前运行脚本的文件名 每个模块都有这个属性
+__dirname            当前文件夹的路径 指向当前运行脚本所在的目录 每个模块都有这个属性
+</code></pre><h3 id="node模块"><a href="#node模块" class="headerlink" title="node模块"></a>node模块</h3><p>模块与文件是一一对应关系，即加载一个模块，实际上就是加载对应的一个模块文件*</p>
+<h2 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h2><pre><code>http         提供HTTP服务器功能
+url             解析URL
+fs             操作文件的功能
+querystring  解析URL的查询字符串。
+</code></pre><h2 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h2><pre><code>符合CommonJS规范：每个文件就是一个模块，有自己的作用域。在一个文件里面定义的变量、函数、类，都是私有的，对其他文件不可见。
+</code></pre><h4 id="模块加载方法"><a href="#模块加载方法" class="headerlink" title="模块加载方法"></a>模块加载方法</h4><pre><code> require(文件路径)  `eg:var http=require(&apos;http&apos;)`;
+     文件路径：
+         1. 可以为相对路径也可以用绝对路径
+         2. 路径前面要加个./如果不加的话它会加载nodejs里的核心模块
+
+模块加载机制
+ 1. 首先按文件名进行查找（不带后缀名）
+ 2. 如果没有找到，会在文件名后面加一个.js的后缀，再次查找
+ 3. 如果没有找到，会在文件名后面加一个.json的后缀，再次查找
+4. 如果没有找到，会在文件名后面加一个.node的后缀，再次查找
+ 5. 如果没有找到，报错
+
+ 文件名 -&gt; .js -&gt; .json -&gt; .node
+</code></pre><h4 id="模块的作用域"><a href="#模块的作用域" class="headerlink" title="模块的作用域"></a>模块的作用域</h4><pre><code>访问其它模块变量的方法
+     1. 把变量作为global对象的一个属性(不推荐，它是一个全局变量)
+     2. 把变量定义在module.exports上
+    模块内module变量代表当前模块。它是一个对象，它有一个exports属性是对外的接口。加载某个模块，其实是加载该模块的module.exports属性
+</code></pre><p><em>exports对象与module.exports指得是同一个对象</em></p>
+<pre><code>module.id 模块的识别符，通常是带有绝对路径的模块文件名
+module.filename 模块的文件名，带有绝对路径。
+module.loaded 返回一个布尔值，表示模块是否已经完成加载。
+module.parent 返回一个对象，表示调用该模块的模块。
+module.children 返回一个数组，表示该模块要用到的其他模块。
+module.exports 表示模块对外输出的值。
+</code></pre><h2 id="文件模块"><a href="#文件模块" class="headerlink" title="文件模块"></a>文件模块</h2><h5 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h5><pre><code>异步 fs.readFile(path,callBack)
+    callBack        回调函数
+         参数1（err）
+            null：读取文件成功
+             对象：读取文件失败，对象里放的是错误信息
+         参数2（buffer）
+            当读取文件失败的时候为undefined，成功的时候为一个Buffer对象调用toString()方法可以把二进制转成字符串
+同步 fs.readFileSync(path,char)
+    char            编码(如果省略的话返回一个Buffer对象)
+    有返回值 var result=fs.readFileSync(path,char)
+</code></pre><h5 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h5><p><em>如果原来的文件存在，内容就会被替换，而不是添加。如果文件不存在，它会新建一个文件</em></p>
+<pre><code>异步 fs.wirteFile(path,data,options,callBack)
+    data            写入的数据，可以是字符串也可以是Buffer对象
+    options        可选参数，可以设置文件的编码
+    callBack        回调函数
+        参数（err）
+            null：写入内容成功
+同步 fs.wirteFileSync(path,data,options)
+    无返回值 `var result=fs.readFileSync(path,char) //undefined`
+</code></pre><h5 id="给文件追加内容"><a href="#给文件追加内容" class="headerlink" title="给文件追加内容"></a>给文件追加内容</h5><p><em>如果文件不存在会创建一个文件</em></p>
+<pre><code>异步 fs.appendFile(path,data,options,callBack)
+同步 fs,appendFileSync(path,data,options)
+    无返回值 `var result=fs.readFileSync(path,char) //undefined`
+</code></pre><h5 id="判断文件是否存在"><a href="#判断文件是否存在" class="headerlink" title="判断文件是否存在"></a>判断文件是否存在</h5><pre><code>异步 fs.exists(path,callback)
+    callBack
+        参数(boolean)
+            true  文件存在
+            false 文件不存在
+同步 fs.existsSync(path)
+    有返回值(返回值为布尔值，表示文件是否存在)
+</code></pre><h5 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h5><pre><code>异步 fs.unlink(path,callBack)
+    callback        回调函数
+        参数（err）    
+             null        删除文件成功
+             对象        删除文件不成功，对象里放的是错误信息
+同步 fs.unlinkSync(path);
+    无返回值
+</code></pre><h5 id="重命名文件"><a href="#重命名文件" class="headerlink" title="重命名文件"></a>重命名文件</h5><pre><code>异步 fs.rename(oldPath,newPath,callBack)
+    oldPath            被命名的文件
+      newPath            要命成的名字
+    callBack            回调函数
+        参数（err）    
+            null        命名成功
+            对象        命名不成功，对象里放的是错误信息
+同步 fs.renameSync(oldPath,newPath)
+    无返回值
+</code></pre><h5 id="获取文件相关信息"><a href="#获取文件相关信息" class="headerlink" title="获取文件相关信息"></a>获取文件相关信息</h5><pre><code>异步 fs.stat(path,callBack)
+     callBack        回调函数
+        参数（err）    
+            null       读取成功
+             对象          读取失败，对象里放的是错误信息
+        参数（mes）  读取成功的话返回这个文件的相关信息，读取不成功的话返回undefined
+同步 fs.statSync(path)
+    有返回值
+</code></pre><h3 id="操作文件夹"><a href="#操作文件夹" class="headerlink" title="操作文件夹"></a>操作文件夹</h3><h5 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h5><pre><code>异步 fs.mkdir(path,callBack)
+    path            文件路径
+    callBack        回调函数
+        参数（err）    
+            null     创建成功
+            对象        创建失败，对象里放的是错误信息    
+同步 fs.mkdirSync(path)
+    无返回值
+</code></pre><h5 id="删除文件夹"><a href="#删除文件夹" class="headerlink" title="删除文件夹"></a>删除文件夹</h5><pre><code>异步 fs.rmdir(path,claaBack)
+    path            文件路径
+    callBack        回调函数
+        参数（err）    
+            null     删除成功
+            对象        删除失败，对象里放的是错误信息   
+同步 fs.rmdirSync(path)
+    无返回值
+</code></pre><h5 id="读取文件夹"><a href="#读取文件夹" class="headerlink" title="读取文件夹"></a>读取文件夹</h5><pre><code>异步 fs.readdir(path.callBack)
+    path            文件路径
+    callBack        回调函数
+        参数（err）    
+            null    读取成功
+            对象       读取失败，对象里放的是错误信息   
+        参数（files）    
+             数组        当前文件夹里的所有文件，如果读取失败的话它的值是undefind
+同步 fs.readdirSync(path)
+    有返回值
+</code></pre><hr>
+<h2 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h2><p>用户输入网址敲回车后所做的事情</p>
+<ol>
+<li>客户端向服务器发送一个http请求</li>
+<li>服务器接收到请求后，对请求进行处理</li>
+<li>服务器处理完以后，把数据返回到客户端</li>
+<li>客户端接收到数据后进行处理<br><strong>nodejs里通过http模块可以搭建一个服务器用来处理客户端的各种请求</strong><h5 id="1-引入http模块"><a href="#1-引入http模块" class="headerlink" title="1.引入http模块"></a>1.引入http模块</h5><code>var http=require(&quot;http&quot;);</code><h5 id="2-创建服务器对象"><a href="#2-创建服务器对象" class="headerlink" title="2.创建服务器对象"></a>2.创建服务器对象</h5> http.createServer(callBack);<pre><code>callback 触发请求事件（客户端有请求了，就会触发这个事件）
+    参数（req）        客户端请求的一些信息
+    参数（res）        服务端向客户端返回的响应信息
+        参数(res)
+        res.write()     给客户端写入东西
+        res.end()       停止响应,**必须要加到最后**
+        res.writeHead(statusCode,reasonPhrase,headers)  设置返回的头信息
+            statusCode      状态码
+            reasonPhrase    状态码对应的描述文字
+            headers         返回头信息
+</code></pre><code>var server=http.createServer(function(req,res){</code><br><code>console.log(req,res);</code><br> <code>res.writeHead(200,&quot;okokok&quot;,{</code><br> <code>&quot;content-type&quot;:&quot;text/html&quot;</code><br> <code>});</code><br> <code>res.write(&quot;&lt;h1&gt;Kaivon&lt;/h1&gt;&quot;);</code><br> <code>res.end();</code><br><code>});</code></li>
+</ol>
+<h5 id="3-监听网络"><a href="#3-监听网络" class="headerlink" title="3.监听网络"></a>3.监听网络</h5><pre><code>server.listen(port,hostname,backlog,callback)
+    port        端口
+    hostname    主机名(IP地址)
+    backlog     允许请求的数量
+    callback    监听成功后的回调函数
+</code></pre><p><code>server.listen(8080,&quot;localhost&quot;);  //这里的server是上面声明的服务器对象</code></p>
+<h2 id="url模块"><a href="#url模块" class="headerlink" title="url模块"></a>url模块</h2><pre><code>url.parse(href)  把地址解析成一个对象
+</code></pre><h2 id="querystring模块"><a href="#querystring模块" class="headerlink" title="querystring模块"></a>querystring模块</h2><pre><code>解析url里的query数据  url.parse(req.url).query为username=kaivon&amp;password=123
+querystring.stringfy(obj,sep,eq)    把对象转成字符串
+    obj 对象
+    sep 转成字符串后多个值间的连接符（默认为&amp;）
+    eq  key与value间的连接符（默认为=）
+querystring.parse(str,sep,eq)       把字符串转成对象
+</code></pre><p><strong>post发送过来的数据是放在缓存区里的，需要通过request的data事件和end事件来进行数据拼接处理</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/19/my-first-article/" data-id="cjf820k9a000c50usqdjje0po" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/19/hello-world/" class="article-date">
+  <time datetime="2016-12-19T13:14:16.131Z" itemprop="datePublished">2016-12-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/19/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/19/hello-world/" data-id="cjf820k98000b50usniqvx4s0" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/26/I-m-back/">I&#39;m back</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/06/rem/">rem</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/compare-Array/">compare Array</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/26/bootstrap/">bootstrap</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/25/git-github/">git github</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Cute WQ<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
